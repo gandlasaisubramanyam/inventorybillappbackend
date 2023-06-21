@@ -8,11 +8,10 @@ import InvoiceRouter from "./routes/invoice.route.js";
 import CustomerRouter from "./routes/customer.route.js";
 dotenv.config();
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT;
 
 // const MONGO_URL = "mongodb://127.0.0.1";
-//const MONGO_URL = process.env.MONGO_URL;
-const MONGO_URL = "mongodb+srv://sai123:sai123@cluster0.w5gouug.mongodb.net/billingapp";
+const MONGO_URL = process.env.MONGO_URL;
 const client = new MongoClient(MONGO_URL);
 await client.connect();
 console.log("mongodb is connected");
